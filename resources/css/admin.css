@@ -1,0 +1,181 @@
+/* ====== Doran Webfont من public/sfc/fonts/doran ====== */
+@font-face {
+    font-family: 'Doran';
+    src: url('/sfc/fonts/doran/Doran-Regular.woff2') format('woff2'),
+        url('/sfc/fonts/doran/Doran-Regular.woff') format('woff'),
+        url('/sfc/fonts/doran/Doran-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Doran';
+    src: url('/sfc/fonts/doran/Doran-Medium.woff2') format('woff2'),
+        url('/sfc/fonts/doran/Doran-Medium.woff') format('woff'),
+        url('/sfc/fonts/doran/Doran-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Doran';
+    src: url('/sfc/fonts/doran/Doran-Bold.woff2') format('woff2'),
+        url('/sfc/fonts/doran/Doran-Bold.woff') format('woff'),
+        url('/sfc/fonts/doran/Doran-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Doran';
+    src: url('/sfc/fonts/doran/Doran-Thin.woff2') format('woff2'),
+        url('/sfc/fonts/doran/Doran-Thin.woff') format('woff'),
+        url('/sfc/fonts/doran/Doran-Thin.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* اربط الخط بتابلر/بووتستراب */
+:root {
+    --tblr-font-sans-serif: 'Doran', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans";
+    --bs-font-sans-serif: var(--tblr-font-sans-serif);
+}
+
+body {
+    font-family: var(--tblr-font-sans-serif);
+}
+
+
+:root {
+    --tblr-primary: #3E0048;
+    /* الموف الأساسي */
+    --tblr-primary-rgb: 109, 40, 217;
+    /* اختياري */
+    --tblr-link-color: var(--tblr-primary);
+    /* يجعل الروابط تميل للموف */
+}
+
+.theme-dark {
+    --tblr-primary: #3E0048;
+    /* موف أنسب للوضع الداكن */
+    --tblr-link-color: var(--tblr-primary);
+}
+
+/* Logo Controll */
+/* شعار غرف داخل السايدبار على خلفية موف */
+.brand-block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--tblr-primary);
+    /* الموف الذي اخترناه */
+    border-radius: .5rem;
+    height: 48px;
+    padding-inline: .75rem;
+}
+
+.brand-logo {
+    height: 26px;
+    width: auto;
+    display: block;
+}
+
+
+/* اسمح للقوائم المنسدلة بالخروج من غلاف الجدول */
+.table-responsive.table-unclip {
+    overflow-x: auto;
+    /* نحافظ على سكرول أفقي */
+    overflow-y: visible !important;
+    /* ونسمح بالخروج عموديًا */
+}
+
+/* ارفع الز-index شوي لو كان فيه تداخل */
+.table-unclip .dropdown-menu {
+    z-index: 1055;
+}
+
+
+:root {
+    --sfc-purple: #3E0048;
+    --sfc-text-dark: #222;
+    --sfc-text-light: #fff;
+    --sfc-muted-light: rgba(255, 255, 255, .85);
+    --sfc-border-light: rgba(255, 255, 255, .25);
+    --sfc-border-dark: #eee;
+}
+
+.sfc-sections .sfc-section {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    transition: background-color .25s ease, color .25s ease;
+}
+
+/* الفردي (1،3،5…): موف */
+.sfc-sections .sfc-section:nth-of-type(odd) {
+    background: var(--sfc-purple);
+    color: var(--sfc-text-light);
+}
+
+.sfc-sections .sfc-section:nth-of-type(odd) h1,
+.sfc-sections .sfc-section:nth-of-type(odd) h2,
+.sfc-sections .sfc-section:nth-of-type(odd) h3,
+.sfc-sections .sfc-section:nth-of-type(odd) h4,
+.sfc-sections .sfc-section:nth-of-type(odd) h5,
+.sfc-sections .sfc-section:nth-of-type(odd) h6 {
+    color: var(--sfc-text-light);
+}
+
+.sfc-sections .sfc-section:nth-of-type(odd) p,
+.sfc-sections .sfc-section:nth-of-type(odd) .lead {
+    color: var(--sfc-muted-light);
+}
+
+.sfc-sections .sfc-section:nth-of-type(odd) .card,
+.sfc-sections .sfc-section:nth-of-type(odd) .goal-box,
+.sfc-sections .sfc-section:nth-of-type(odd) .team-item {
+    background: rgba(255, 255, 255, .06);
+    border: 1px solid var(--sfc-border-light);
+}
+
+/* الزوجي (2،4،6…): أبيض */
+.sfc-sections .sfc-section:nth-of-type(even) {
+    background: #fff;
+    color: var(--sfc-text-dark);
+}
+
+.sfc-sections .sfc-section:nth-of-type(even) h1,
+.sfc-sections .sfc-section:nth-of-type(even) h2,
+.sfc-sections .sfc-section:nth-of-type(even) h3,
+.sfc-sections .sfc-section:nth-of-type(even) h4,
+.sfc-sections .sfc-section:nth-of-type(even) h5,
+.sfc-sections .sfc-section:nth-of-type(even) h6 {
+    color: #2c0035;
+}
+
+.sfc-sections .sfc-section:nth-of-type(even) .goal-box,
+.sfc-sections .sfc-section:nth-of-type(even) .team-item {
+    background: #fff;
+    border: 1px solid var(--sfc-border-dark);
+}
+
+/* نحترم سكشن التواصل الداكن */
+#contact.bg-dark,
+#contact.bg-dark-alfa-70 {
+    background-color: rgba(0, 0, 0, .75) !important;
+    color: #fff !important;
+}
+
+#contact .form-control {
+    background: #fff;
+    color: #222;
+}
+
+#contact .btn {
+    background: #fff;
+    color: #000;
+    border-color: #fff;
+}

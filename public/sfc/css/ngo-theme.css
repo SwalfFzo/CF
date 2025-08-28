@@ -1,0 +1,642 @@
+/* Regular */
+@font-face {
+    font-family: 'Doran';
+    src: url('../fonts/doran/Doran-Regular.woff2') format('woff2'),
+        url('../fonts/doran/Doran-Regular.woff') format('woff'),
+        url('../fonts/doran/Doran-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Bold */
+@font-face {
+    font-family: 'Doran';
+    src: url('../fonts/doran/Doran-Bold.woff2') format('woff2'),
+        url('../fonts/doran/Doran-Bold.woff') format('woff'),
+        url('../fonts/doran/Doran-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* Medium */
+@font-face {
+    font-family: 'Doran';
+    src: url('../fonts/doran/Doran-Medium.woff2') format('woff2'),
+        url('../fonts/doran/Doran-Medium.woff') format('woff'),
+        url('../fonts/doran/Doran-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+/* Thin */
+@font-face {
+    font-family: 'Doran';
+    src: url('../fonts/doran/Doran-Thin.woff2') format('woff2'),
+        url('../fonts/doran/Doran-Thin.woff') format('woff'),
+        url('../fonts/doran/Doran-Thin.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+}
+
+/* Light */
+@font-face {
+    font-family: 'Doran';
+    src: url('../fonts/doran/Doran-Light.woff2') format('woff2'),
+        url('../fonts/doran/Doran-Light.woff') format('woff'),
+        url('../fonts/doran/Doran-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+/* اجعل دوران هو الخط الأساسي */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+button {
+    font-family: 'Doran', sans-serif;
+}
+
+
+.colorFont {
+    color: #3E0048;
+    font-family: 'Doran', sans-serif;
+}
+
+
+.colorW {
+    color: #fff;
+    font-family: 'Doran', sans-serif;
+}
+
+/* خلفية أساسية بالموف */
+body {
+    background-color: #3E0048;
+    color: #FFFFFF;
+    font-family: 'Dorran', sans-serif;
+}
+
+/* النصوص على خلفية بيضاء */
+.bg-white,
+.section-light {
+    background-color: #FFFFFF;
+    color: #3E0048;
+}
+
+/* العناوين */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #FFFFFF;
+}
+
+.bg-white h1,
+.bg-white h2,
+.bg-white h3,
+.bg-white h4 {
+    color: #3E0048;
+}
+
+/* الأزرار الأساسية */
+.btn-primary {
+    background-color: #19351F;
+    border-color: #19351F;
+    color: #FFFFFF;
+}
+
+.btn-primary:hover {
+    background-color: #145214;
+    border-color: #145214;
+}
+
+/* الأزرار الثانوية */
+.btn-secondary {
+    background-color: #E1F7C8;
+    border-color: #E1F7C8;
+    color: #19351F;
+}
+
+.btn-secondary:hover {
+    background-color: #C6E8A6;
+    border-color: #C6E8A6;
+}
+
+/* أقسام بديلة */
+.section-alt {
+    background-color: #E0EBF4;
+    color: #19351F;
+}
+
+/* الوضع الافتراضي (أبيض + روابط موف) */
+.navbar-custom {
+    background-color: #3E0048 !important;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar-custom .inner-nav a {
+    color: #7D86F3 !important;
+    /* الموف */
+    font-weight: 600;
+}
+
+/* عند التمرير (خلفية موف + روابط بيضاء) */
+.navbar-scrolled {
+    background-color: #3E0048 !important;
+}
+
+.navbar-scrolled .inner-nav a {
+    color: #fff !important;
+}
+
+
+/* edited heror titles */
+
+.hero-right {
+    text-align: right;
+    max-width: 600px;
+    /* يخلي البلوك صغير على اليمين */
+    margin-left: auto;
+    /* يدفعه لليمين */
+    margin-right: 50px;
+    /* مسافة من الطرف */
+}
+
+.hero-title {
+    font-size: 36px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.4;
+}
+
+.hero-subtitle-en {
+    font-size: 14px;
+    color: #ccc;
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+
+.hero-subtitle-ar {
+    font-size: 16px;
+    color: #bbb;
+    margin-top: 5px;
+}
+
+.hero-logo img {
+    margin-top: 15px;
+    display: inline-block;
+}
+
+
+/* mission */
+
+.vision-mission-section {
+    background-color: #3E0048;
+    /* الخلفية الأساسية */
+    padding: 100px 20px;
+    position: relative;
+    /* عشان نضيف العناصر الديكورية */
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.overlay-box {
+    background: rgba(255, 255, 255, 0.95);
+    /* صندوق أبيض شبه شفاف */
+    border-radius: 12px;
+    padding: 60px 40px;
+    max-width: 900px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 2;
+    /* يخلي الصندوق فوق الديكور */
+}
+
+.section-block {
+    margin-bottom: 60px;
+}
+
+.small-title {
+    font-size: 14px;
+    font-weight: bold;
+    color: #7d86f3;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.main-title {
+    font-size: 30px;
+    color: #3E0048;
+    margin: 15px 0;
+    font-family: 'Doran-Bold', sans-serif;
+}
+
+.divider {
+    width: 60px;
+    border: none;
+    border-top: 2px solid #3E0048;
+    margin: 15px auto;
+}
+
+.description {
+    font-size: 18px;
+    color: #333;
+    line-height: 1.8;
+}
+
+.goals-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.goals-list li {
+    font-size: 18px;
+    color: #3E0048;
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 25px;
+}
+
+.goals-list li::before {
+    content: "•";
+    color: #7d86f3;
+    font-size: 22px;
+    position: absolute;
+    left: 0;
+    top: -2px;
+}
+
+/* --- العناصر الديكورية الخلفية --- */
+.vision-mission-section::before,
+.vision-mission-section::after {
+    content: "";
+    position: absolute;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.vision-mission-section::before {
+    top: -100px;
+    left: -100px;
+}
+
+.vision-mission-section::after {
+    bottom: -120px;
+    right: -120px;
+}
+
+/* خطوط مائلة */
+.vision-mission-section .decor-line {
+    position: absolute;
+    width: 150px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.25);
+    transform: rotate(30deg);
+    z-index: 1;
+}
+
+.vision-mission-section .line1 {
+    top: 50px;
+    right: 200px;
+}
+
+.vision-mission-section .line2 {
+    bottom: 80px;
+    left: 150px;
+}
+
+.goals p {
+    margin: 10px 0;
+    font-size: 18px;
+    color: #333;
+}
+
+
+/* values */
+.values-section {
+    background: #fff;
+    /* أو خلفية خفيفة حسب التصميم */
+    padding: 60px 0;
+    text-align: center;
+}
+
+.values-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.value-item {
+    flex: 1;
+    padding: 20px;
+    position: relative;
+}
+
+.value-item .icon {
+    font-size: 40px;
+    color: #3E0048;
+    /* الموف */
+    margin-bottom: 15px;
+}
+
+.value-item h4 {
+    font-family: 'Doran', sans-serif;
+    /* خط الهوية */
+    font-size: 22px;
+    color: #3E0048;
+    margin: 0;
+}
+
+/* الخطوط الفاصلة */
+.value-item::before {
+    content: "";
+    position: absolute;
+    top: 20%;
+    right: 0;
+    width: 1px;
+    height: 60%;
+    background: #fff;
+}
+
+.value-item:first-child::before {
+    display: none;
+}
+
+
+.values-desc {
+    max-width: 800px;
+    margin: 0 auto 50px auto;
+    /* مسافة بين الوصف والقيم */
+    font-size: 18px;
+    color: #3E0048;
+    line-height: 1.8;
+}
+
+
+/* Stratical goald */
+.goal-box {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 25px;
+    transition: all 0.3s ease-in-out;
+}
+
+.goal-box:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-5px);
+}
+
+.goal-icon {
+    font-size: 35px;
+    color: #C9B7D6;
+    /* موف فاتح متناسق */
+    margin-bottom: 15px;
+}
+
+.goal-title {
+    color: #ffffff;
+    font-family: "Doran", sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+.hero-section {
+    position: relative;
+    background: #3E0048;
+    /* خلفية الموف */
+    color: white;
+    text-align: center;
+    padding: 120px 20px;
+    overflow: hidden;
+}
+
+.shapes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.shape {
+    position: absolute;
+    opacity: 0.3;
+    animation: float 10s infinite ease-in-out;
+}
+
+/* دوائر */
+.shape.circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: #b657ff;
+    top: 20%;
+    left: 10%;
+    animation-duration: 12s;
+}
+
+/* مثلث */
+.shape.triangle {
+    width: 0;
+    height: 0;
+    border-left: 40px solid transparent;
+    border-right: 40px solid transparent;
+    border-bottom: 70px solid #ff6b6b;
+    top: 60%;
+    left: 70%;
+    animation-duration: 14s;
+}
+
+/* مربع */
+.shape.square {
+    width: 70px;
+    height: 70px;
+    background: #ffd93d;
+    top: 30%;
+    left: 80%;
+    transform: rotate(20deg);
+    animation-duration: 16s;
+}
+
+/* نقاط صغيرة */
+.shape.dot {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #6bcdfd;
+    top: 75%;
+    left: 25%;
+    animation-duration: 10s;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-40px) rotate(20deg);
+    }
+
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+}
+
+.vision-section {
+    position: relative;
+    background: #3E0048;
+    /* الموف الأساسي */
+    color: white;
+    text-align: center;
+    padding: 120px 20px;
+    overflow: hidden;
+}
+
+.bg-shapes {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.bg-shapes .circle {
+    position: absolute;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    animation: float 12s infinite ease-in-out;
+}
+
+.bg-shapes .circle.big {
+    width: 250px;
+    height: 250px;
+    top: -100px;
+    left: -100px;
+}
+
+.bg-shapes .circle.small {
+    width: 120px;
+    height: 120px;
+    bottom: -60px;
+    right: -60px;
+    animation-duration: 15s;
+}
+
+.bg-shapes .line {
+    position: absolute;
+    width: 150px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.1);
+    top: 20%;
+    left: 10%;
+    animation: slide 10s infinite linear;
+}
+
+.bg-shapes .line.diagonal {
+    top: 70%;
+    left: 80%;
+    transform: rotate(45deg);
+    animation-duration: 14s;
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-30px) rotate(15deg);
+    }
+
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(40px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.member img {
+    width: 300px;
+    /* العرض */
+    height: 400px;
+    /* الطول */
+    object-fit: cover;
+    /* يقص الصورة للحجم المطلوب */
+    border-radius: 10px;
+    /* اختياري - يعطي حواف ناعمة */
+}
+
+
+/* حجم قياسي للصورة داخل صفحة الخبر */
+.news-detail-image {
+    max-width: 850px !important;
+    /* يمنع تعارض الثيم */
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+    /* توسيط الصورة */
+}
+
+/* لو القالب يفرض عرض كبير عبر .blog-media img، نقيّده هنا */
+.blog-media img.news-detail-image {
+    max-width: 850px !important;
+}
+
+
+.bg-lavender {
+    background-color: #7D86F3 !important;
+    color: #FFFFFF !important;
+}
+
+.bg-white {
+    background-color: #FFFFFF !important;
+    color: #3E0048 !important;
+}
+
+.bg-light-gray {
+    background-color: #F8F8F8 !important;
+    color: #3E0048 !important;
+}
