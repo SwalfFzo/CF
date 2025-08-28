@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: ngo-site
+    runtime: docker          # بدل env: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_URL
+        value: https://cf-3ee7.onrender.com   # بدون / في النهاية
+      - key: APP_DEBUG
+        value: "false"
+      - key: base64:Hl6xWscxHbkwtAmB665KLHNpyMgxg3qombbx7UA7qpg=
+        sync: false          # ضعه يدويًا من لوحة Environment (لن يُحدّث عبر YAML)
+      - key: DB_CONNECTION
+        value: pgsql
+      - key: DATABASE_URL
+        fromDatabase:
+          name: ngo-db       # اسم قاعدة Postgres في Render
+          property: connectionString
+
+databases:
+  - name: ngo-db
+    plan: free
+    postgresMajorVersion: "16"
