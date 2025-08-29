@@ -4,11 +4,13 @@ import laravel from 'laravel-vite-plugin'
 export default defineConfig({
     plugins: [
         laravel({
-            'resources/css/app.css',
-            'resources/js/app.js',
-            // إدخالات لوحة التحكم:
-            'resources/js/admin.js',
-            'resources/css/admin.css', // إن وجد
+            input: [
+                'resources/css/app.css',
+                'resources/js/app.js',
+                // إدخالات لوحة التحكم:
+                'resources/js/admin.js',
+                'resources/css/admin.css', // إن وجد
+            ],
             refresh: true,
         }),
     ],
