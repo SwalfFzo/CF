@@ -13,9 +13,10 @@ return new class extends Migration {
         Schema::create('news_category_map', function (Blueprint $table) {
             $table->id();
             $table->foreignId('news_id')->constrained('news')->cascadeOnDelete();
-            $table->foreignId('news_category_id')->constrained('news_categories')->cascadeOnDelete();
+            $table->foreignId('category_id')->constrained('news_categories')->cascadeOnDelete();
             $table->timestamps();
-            $table->unique(['news_id', 'news_category_id']);
+
+            $table->unique(['news_id', 'category_id']);
         });
     }
 
