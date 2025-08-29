@@ -1,0 +1,63 @@
+services:
+  app:
+    build: .
+    container_name: ngo_app
+    ports:
+      - "8000:8000" # Laravel app → http://localhost:8000
+    environment:
+      # Laravel
+      APP_ENV: local
+      APP_DEBUG: "true"
+      APP_URL: http://localhost:8000
+      APP_KEY: base64:ضع_مفتاح_ثابت_مرة_واحدة
+
+      # قاعدة البيانات
+      DB_CONNECTION: pgsql
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_DATABASE: ngo_local
+      DB_USERNAME: ngo_user
+      DB_PASSWORD: secret123
+
+      # إعدادات إضافية (لتفادي مشاكل الكاش والجلسات والطوابير)
+      CACHE_STORE: file
+      SESSION_DRIVER: file
+      QUEUE_CONNECTION: sync
+
+      FILESYSTEM_DISK: local
+      LOG_CHANNEL: stack
+      LOG_LEVEL: debug
+    volumes:
+      - .:/var/www
+    depends_on:
+      - db
+
+  vite:
+    image: node:20-alpine
+    container_name: ngo_vite
+    working_dir: /app
+    volumes:
+      - .:/app
+    command: sh -c "npm ci && npm run dev -- --host 0.0.0.0 --port 5173"
+    ports:
+      - "5173:5173" # Vite server → http://localhost:5173
+    environment:
+      CHOKIDAR_USEPOLLING: "true"
+    depends_on:
+      - app
+
+  db:
+    image: postgres:16
+    container_name: ngo_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ngo_local
+      POSTGRES_USER: ngo_user
+      POSTGRES_PASSWORD: secret123
+    ports:
+      - "5433:5432" # Postgres خارجيًا على منفذ 5433
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
