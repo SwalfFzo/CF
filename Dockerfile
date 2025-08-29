@@ -43,8 +43,9 @@ RUN mkdir -p storage bootstrap/cache \
     && chown -R www-data:www-data storage bootstrap/cache \
     && chmod -R 775 storage bootstrap/cache
 
-# استمع للمنفذ الذي تمرره DO (عادة 8080)
-RUN sed -ri 's/Listen 80/Listen ${PORT:-8080}/g' /etc/apache2/ports.conf
-EXPOSE 8080
+#     الذي تمرره DO (عادة 8080)
+RUN sed -ri 's/Listen 80/Listen 8000/g' /etc/apache2/ports.conf \
+    && sed -ri 's!<VirtualHost \*:80>!<VirtualHost \*:8000>!g' /etc/apache2/sites-available/000-default.conf
+EXPOSE 8000
 
 CMD ["apache2-foreground"]
