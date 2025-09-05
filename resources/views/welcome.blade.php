@@ -58,15 +58,12 @@ style=" background-image: url('{{ asset('sfc/images/R/MBG.png') }}');
             </div>
         </div>
     </div>
-n    <!-- Scroll Down Indicator -->
+   <!-- Scroll Down Indicator -->
       <div class="local-scroll scroll-down-wrap wow fadeInUpShort" data-wow-offset="0">
         <a href="#about" class="scroll-down"><i class="scroll-down-icon"></i><span class="sr-only">Scroll to the next section</span></a>
     </div>
 
 </section>
-
-
-<!-- End Dashboard Section -->
 
 <!-- About -->
 <!-- About Section -->
@@ -95,10 +92,7 @@ n    <!-- Scroll Down Indicator -->
  <div class="col-lg-6">
         <div class="about-visual" style="--lines-url: url('{{ asset('sfc/images/R/1SecionBG.png') }}');">
   <img class="about-flag" src="{{ asset('sfc/images/R/flag.png') }}" alt="">
-  <img class="dec dec-tl"  src="{{ asset('sfc/images/R/dec-top-left.png') }}"  alt="">
-  <img class="dec dec-tr"  src="{{ asset('sfc/images/R/dec-top-right.png') }}" alt="">
-  <img class="dec dec-mid" src="{{ asset('sfc/images/R/dec-purple.png') }}"    alt="">
-</div>
+ 
 
       </div>
     </div>
