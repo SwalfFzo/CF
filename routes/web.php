@@ -1,4 +1,5 @@
 <?php
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\ProfileController;
@@ -62,8 +63,6 @@ Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
     Route::put('/mail-settings', [MailSettingsController::class, 'update'])->name('admin.mail.update');
     Route::post('/mail-settings/test', [MailSettingsController::class, 'testSend'])->name('admin.mail.test');
 });
-
-
 /*
 |--------------------------------------------------------------------------
 | Authenticated areas

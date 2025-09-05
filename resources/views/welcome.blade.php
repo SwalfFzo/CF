@@ -4,29 +4,65 @@
 
 @section('content')
 
+
 <!-- Hero Section -->
-<section class="home-section bg-lavender appear-animate" data-background="sfc/images/mainbg.png" id="home">
-    <div class="container min-height-100vh d-flex align-items-center pt-100 pb-100">
+<section class="home-section hero-section appear-animate" id="home" 
+style=" background-image: url('{{ asset('sfc/images/R/MBG.png') }}');
+  background-size: 100%;           /* كان contain */
+  background-position: center top;  /* أو center */
+  background-repeat: no-repeat;
+  position: relative;
+  min-height: 100vh;
+  background-color: transparent; ">
+    <!-- Overlay Elements -->
+    <div class="hero-overlay-elements">
+        <img src="{{ asset('sfc/images/R/SMBG.png') }}" alt="Overlay Elements" class="overlay-elements" 
+        style="position: absolute; top: 20%; right: -5%; width: 45%; height: 50%; object-fit: cover; z-index: 1;">
+    </div>
 
-        <div class="home-content hero-right text-end wow fadeInUpShort" data-wow-delay=".1s">
-            <h2 class="hero-title">
-                نحو بنية تنموية متكاملة <br> للجهات الأهلية
-            </h2>
+    <!-- Decorative Shapes -->
+    <div class="decorative-shape"></div>
+    <div class="decorative-shape"></div>
+    
+    <!-- Additional Geometric Elements -->
+    <div class="geometric-elements">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+        <div class="container min-height-100vh d-flex align-items-center pt-100 pb-100" style="position: relative; z-index: 5;">
+        <div class="row w-100 align-items-center">
+              <div class="col-lg-6"></div>
+            <!-- Right Side - Text Content -->
+            <div class="col-lg-6">
+                <div class="hero-content text-end wow fadeInUpShort" data-wow-delay=".1s" style="color: white;">
+                    <h1 class="hero-title mb-4" style="font-size: 3rem; font-weight: bold; line-height: 1.2; text-align:right;">
+                        ريادة في تعزيز<br>
+                        <span style="color:rgb(255, 255, 255);">المسؤولية الاجتماعية للشركات</span>
+                    </h1>
 
-            <p class="hero-subtitle-en wow fadeInUpShort" data-wow-delay=".15s">
-                TOWARDS AN INTEGRATED DEVELOPMENT ENVIRONMENT<br>
-                FOR CIVIL SOCIETY ORGANIZATIONS
-            </p>
+                    <h2 class="hero-subtitle-en mb-4" style="font-size: 1.5rem; font-weight: 300; opacity: 0.9;">
+                        Leadership in Promoting<br>
+                        <span style="color: #87CEEB;">Corporate Social Responsibility</span>
+                    </h2>
 
-            <div class="hero-logo mt-3">
-                <img src="{{ asset('sfc/images/clients-logos/whitelogo.png') }}" alt="logo" width="100">
+                    <div class="hero-actions mt-5">
+                        <a href="#about" class="btn btn-primary btn-lg me-3" style="background: linear-gradient(45deg, #3E0048, #6A1B9A); border: none; padding: 15px 30px; border-radius: 50px;">
+                            اكتشف المزيد
+                        </a>
+                        <a href="#contact-us" class="btn btn-outline-light btn-lg" style="border: 2px solid white; padding: 15px 30px; border-radius: 50px;">
+                            تواصل معنا
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-
-    <div class="local-scroll scroll-down-wrap wow fadeInUpShort" data-wow-offset="0">
+n    <!-- Scroll Down Indicator -->
+      <div class="local-scroll scroll-down-wrap wow fadeInUpShort" data-wow-offset="0">
         <a href="#about" class="scroll-down"><i class="scroll-down-icon"></i><span class="sr-only">Scroll to the next section</span></a>
     </div>
+
 </section>
 
 
@@ -34,30 +70,43 @@
 
 <!-- About -->
 <!-- About Section -->
-<section class="page-section bg-white" id="about">
-    <div class="container relative wow fadeInUpShort" data-wow-delay=".2s">
-        <div class="row align-items-center">
+<section id="about" class="page-section about-sfc">
+  <div class="container position-relative">
+    <div class="row align-items-center flex-lg-row-reverse gx-lg-5">
 
-            <div class="col-lg-6 relative text-center wow scaleOutIn" data-wow-duration="1.2s">
-                <img src="{{ asset('sfc/images/sfc-about.png') }}" alt="صورة 1" class="img-fluid rounded shadow mb-4" />
-                <img src="{{ asset('sfc/images/m1.png') }}" alt="صورة 2" class="img-fluid rounded shadow" />
-            </div>
+      <!-- العمود: النص (يسار في العرض الكبير) -->
+      <div class="col-lg-6">
+        <div class="text-content">
+          <p class="about-paragraph mb-4">
+            مؤسسة أهلية مسجلة لدى المركز الوطني لتنمية القطاع غير الربحي برقم 1100526100 وفق نظام الجمعيات
+            والمؤسسات الأهلية لتمارس عملها بشخصيتها الاعتبارية بتمثيل من رئيس مجلس الأمناء، وقد تم تأسيس مؤسسة غرف
+            الأهلية من اتحاد الغرف التجارية السعودية لتفعيل ممارسة المسؤولية الاجتماعية لدى الغرف السعودية وكافة
+            قطاعات الأعمال بالمملكة، وتعمل بالشراكة مع مختلف القطاعات على تحقيق الأهداف التالية:
+          </p>
 
-            <div class="col-lg-5 offset-lg-1">
-                <div class="mt-140 mt-lg-80 mt-md-60 mt-xs-30 mb-140 mb-lg-80">
-                    <div class="banner-content wow fadeInUpShort" data-wow-duration="1.2s">
-                        <h2 class="fw-bold mb-4" style="color:#3E0048;">عن المؤسّسة</h2>
-                        <p class="lead" style="color:#3E0048; line-height:1.8;">
-                            مؤسّسة غرف الأهلية مسجلة لدى المركز الوطني لتنمية القطاع غير الربحي، تسعى إلى بناء القدرات والشراكات وتعزيز دور الشركات في التنمية المستدامة بما يحقق أثراً إيجابياً ملموساً في حياة الناس.
-                        </p>
-                        <a href="#more" class="btn btn-mod btn-color btn-large btn-round mt-4">تعرّف أكثر</a>
-                    </div>
-                </div>
-            </div>
-
+          <ul class="about-bullets">
+            <li>دعم وتنفيذ الجهود والمشاريع التنموية الهادفة إلى تطوير وتمكين القطاع غير الربحي.</li>
+            <li>دعم ومساندة المبادرات التنموية والمدنية التي تعنى بالتنمية الاجتماعية.</li>
+            <li>دعم البرامج والمشروعات الشرعية والاجتماعية والتعليمية والصحية والتطوعية.</li>
+            <li>تقديم الدعم المالي والعيني للأسر والأفراد والحالات المحتاجة بالتنسيق مع الجمعيات المرخصة.</li>
+          </ul>
         </div>
+      </div>
+ <div class="col-lg-6">
+        <div class="about-visual" style="--lines-url: url('{{ asset('sfc/images/R/1SecionBG.png') }}');">
+  <img class="about-flag" src="{{ asset('sfc/images/R/flag.png') }}" alt="">
+  <img class="dec dec-tl"  src="{{ asset('sfc/images/R/dec-top-left.png') }}"  alt="">
+  <img class="dec dec-tr"  src="{{ asset('sfc/images/R/dec-top-right.png') }}" alt="">
+  <img class="dec dec-mid" src="{{ asset('sfc/images/R/dec-purple.png') }}"    alt="">
+</div>
+
+      </div>
     </div>
+  </div>
 </section>
+
+
+
 
 <!-- End About Section -->
 
@@ -154,7 +203,7 @@
 <hr class="mt-0 mb-0 white">
 
 <!-- Stratigic Goal -->
-<section class="page-section ">
+<section class="page-section" id="strategic">
     <div class="shapes">
         <span class="shape circle"></span>
         <span class="shape triangle"></span>

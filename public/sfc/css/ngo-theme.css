@@ -135,21 +135,31 @@ h6 {
     color: #19351F;
 }
 
-/* الوضع الافتراضي (أبيض + روابط موف) */
+/* الوضع الافتراضي (شفاف + روابط بيضاء) */
 .navbar-custom {
-    background-color: #3E0048 !important;
+    background-color: transparent !important;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .navbar-custom .inner-nav a {
-    color: #7D86F3 !important;
-    /* الموف */
+    color: #fff !important;
     font-weight: 600;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.navbar-custom .inner-nav a:hover {
+    color: #FFD700 !important;
 }
 
 /* عند التمرير (خلفية موف + روابط بيضاء) */
-.navbar-scrolled {
-    background-color: #3E0048 !important;
+.navbar-custom.navbar-scrolled {
+    background-color: #4B006E !important;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, .25);
+}
+
+.navbar-custom.navbar-scrolled .inner-nav a {
+    color: #fff !important;
+    text-shadow: none;
 }
 
 .navbar-scrolled .inner-nav a {
@@ -419,12 +429,28 @@ h6 {
 
 .hero-section {
     position: relative;
-    background: #3E0048;
-    /* خلفية الموف */
-    color: white;
-    text-align: center;
-    padding: 120px 20px;
-    overflow: hidden;
+    min-height: 100vh;
+    /* طبقتان: 1) تحت = لون/تدرّج يملأ كامل الـsection  2) فوق = الصورة */
+    background-image: radial-gradient(100% 120% at 50% 20%, #1a0030 0%, #1a0030 100%),
+    url("{{ asset('sfc/images/R/MBG.png') }}");
+    background-repeat: no-repeat, no-repeat;
+    background-position: center top, center top;
+    background-size: cover, 100% auto;
+    /* التدرج يغطي كله / الصورة عرضها 100% */
+}
+
+.hero-section>* {
+    position: relative;
+    z-index: 5;
+}
+
+.hero-section .hero-overlay-elements {
+    z-index: 4;
+}
+
+.scroll-down-indicator {
+    z-index: 10 !important;
+
 }
 
 .shapes {
@@ -639,4 +665,240 @@ h6 {
 .bg-light-gray {
     background-color: #F8F8F8 !important;
     color: #3E0048 !important;
+}
+
+:root {
+    --mov: #4B006E;
+    --mov-700: #3b0056;
+}
+
+/* ألوان مساعدة للنص */
+.colorMov {
+    color: var(--mov);
+}
+
+.colorMov-700 {
+    color: var(--mov-700);
+}
+
+/* القسم */
+:root {
+    --mov: #4B006E;
+    --about-h: 640px;
+    /* ارتفاع موحّد للعمودين على الديسكتوب */
+}
+
+/* القسم */
+.about-sfc {
+    background: #fff;
+    position: relative;
+    overflow: hidden;
+    padding: 80px 0;
+}
+
+/* شبكة القسم */
+.about-sfc .row {
+    align-items: stretch;
+}
+
+/* عمود النص = نفس ارتفاع عمود الصورة */
+.text-content {
+    min-height: var(--about-h);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 10px;
+}
+
+/* عمود الصورة: خطوط الخلفية على اليمين + طبقات فوقها */
+:root {
+    --mov: #4B006E;
+    --about-h: clamp(540px, 66vh, 720px);
+    /* توحيد ارتفاع العمودين */
+}
+
+/* القسم */
+.about-sfc {
+    background: #fff;
+    padding: 80px 0;
+    overflow: hidden;
+}
+
+/* العمودان بنفس الارتفاع ومُحاذاة وسط */
+.text-content {
+    min-height: var(--about-h);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: right;
+    max-width: 620px;
+    /* عرض السطور مثل الصورة */
+    margin-inline-start: auto;
+    /* يجي يسار العمود في RTL */
+}
+
+.about-paragraph {
+    color: #265b60;
+    line-height: 2;
+    font-size: 1.125rem;
+}
+
+/* نقاط القوائم */
+.about-bullets {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    color: #265b60;
+}
+
+.about-bullets li {
+    position: relative;
+    padding-right: 28px;
+    margin-bottom: .65rem;
+}
+
+.about-bullets li::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: .6em;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--mov);
+}
+
+/* العمود الأيمن (العَلم + خطوط الخلفية) */
+.about-visual {
+    position: relative;
+    min-height: var(--about-h);
+    /* احذف أي background سابق هنا */
+}
+
+/* الخلفية الرصاصية كطبقة خلفية */
+.about-visual::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: var(--lines-url);
+    /* نمررها من الـHTML */
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: clamp(520px, 44vw, 760px) auto;
+    /* عدّلها لو احتجت */
+    opacity: .95;
+    /* خفّة الخطوط */
+    z-index: 1;
+    /* خلف العلم */
+    pointer-events: none;
+}
+
+/* العلم فوق الخلفية */
+.about-flag {
+    z-index: 2;
+    position: absolute;
+    bottom: 0;
+    right: clamp(24px, 3vw, 48px);
+    width: clamp(420px, 36vw, 620px);
+    height: auto;
+}
+
+/* الديكورات أعلى الكل */
+.about-visual .dec {
+    z-index: 3;
+    position: absolute;
+}
+
+/* الديكورات */
+.about-visual .dec {
+    position: absolute;
+    z-index: 3;
+    width: clamp(70px, 7vw, 96px);
+    height: auto;
+}
+
+.dec-tl {
+    left: clamp(32px, 6vw, 64px);
+    top: clamp(24px, 6vh, 80px);
+}
+
+.dec-tr {
+    right: clamp(120px, 12vw, 160px);
+    top: clamp(60px, 10vh, 120px);
+}
+
+.dec-mid {
+    left: clamp(120px, 12vw, 180px);
+    top: clamp(260px, 28vh, 340px);
+}
+
+/* استجابة */
+@media (max-width: 1199.98px) {
+    :root {
+        --about-h: 520px;
+    }
+}
+
+@media (max-width: 991.98px) {
+    :root {
+        --about-h: 460px;
+    }
+
+    .about-visual {
+        background-position: center top;
+        background-size: clamp(380px, 60vw, 480px) auto;
+        margin-top: 24px;
+    }
+
+    .about-flag {
+        right: 50%;
+        transform: translateX(50%);
+        width: clamp(360px, 70vw, 480px);
+    }
+
+    .dec-tl {
+        left: 6%;
+        top: 6%;
+    }
+
+    .dec-tr {
+        right: 12%;
+        top: 18%;
+    }
+
+    .dec-mid {
+        left: 14%;
+        top: 45%;
+    }
+}
+
+/* توازن النص العربي: يمين + مبرَّر */
+.about-sfc .text-content p,
+.about-sfc .text-content li {
+    text-align: justify;
+    /* يوازن بداية/نهاية كل الأسطر */
+    text-align-last: right;
+    /* آخر سطر يكون لليمين (أفضل للعربية) */
+    -moz-text-align-last: right;
+    /* فايرفوكس */
+    line-height: 2;
+    /* راحة للقراءة */
+    word-spacing: .3px;
+    /* لمسة خفيفة للعربية */
+}
+
+/* العنوان يتوزن كسطرين/ثلاثة بشكل أجمل */
+.about-sfc .text-content h2 {
+    text-wrap: balance;
+    /* يوزّع الكلمات بين الأسطر */
+}
+
+@media (max-width: 575.98px) {
+    :root {
+        --about-h: 380px;
+    }
+
+    .about-visual .dec {
+        width: 64px;
+    }
 }
